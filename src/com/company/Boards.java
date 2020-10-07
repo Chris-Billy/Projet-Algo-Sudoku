@@ -1,4 +1,4 @@
-package com.robin;
+package com.company;
 
 public class Boards {
     static int[][] boardEasy = {
@@ -49,23 +49,3 @@ public class Boards {
             {0, 0, 2, 4, 0, 0, 0, 0, 8}
     };
 }
-
-    public static boolean sectionIsTrue (int[][] tab){
-        // On test tous les nombres de 1 à 9
-        for (int num = 1; num < 10; num++){
-            int counter = 0;
-            // On test tous les indices d'une ligne
-            for (int i = 0; i < 3; i++){
-                // On test tous les indices d'une colonne
-                for (int j = 0; j < 3; j++){
-                    if (num == tab[i][j]){
-                        counter++;
-                    }
-                    if (counter > 1){
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }

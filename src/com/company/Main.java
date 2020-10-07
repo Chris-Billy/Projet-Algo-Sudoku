@@ -2,54 +2,6 @@ package com.company;
 
 public class Main {
 
-    static int[][] boardEasy = {
-            {4, 0, 0, 1, 0, 2, 6, 8, 0},
-            {1, 0, 4, 0, 9, 0, 0, 0, 4},
-            {0, 3, 8, 0, 6, 4, 0, 1, 0},
-            {0, 0, 5, 0, 7, 1, 9, 2, 0},
-            {0, 2, 6, 0, 0, 9, 8, 0, 0},
-            {8, 0, 0, 2, 5, 0, 0, 0, 0},
-            {9, 0, 3, 0, 0, 0, 0, 0, 8},
-            {2, 5, 0, 6, 0, 0, 1, 0, 7},
-            {6, 0, 7, 9, 0, 5, 3, 0, 0}
-    };
-
-    static int[][] boardMedium = {
-            {0, 7, 0, 3, 4, 0, 2, 0, 6},
-            {9, 0, 0, 7, 0, 6, 0, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {2, 0, 0, 0, 7, 9, 8, 6, 0},
-            {0, 0, 0, 0, 0, 2, 3, 0, 4},
-            {4, 0, 7, 5, 0, 8, 0, 0, 0},
-            {0, 0, 0, 9, 0, 0, 0, 0, 0},
-            {0, 0, 6, 0, 0, 0, 0, 1, 7},
-            {5, 1, 0, 0, 8, 0, 4, 0, 2}
-    };
-
-    static int[][] boardHard = {
-            {0, 0, 0, 0, 0, 0, 9, 4, 0},
-            {6, 0, 0, 0, 0, 0, 2, 7, 0},
-            {8, 2, 0, 0, 4, 9, 6, 0, 0},
-            {0, 7, 4, 0, 0, 0, 0, 0, 0},
-            {1, 0, 0, 7, 6, 0, 0, 0, 0},
-            {0, 6, 2, 0, 0, 5, 0, 8, 0},
-            {0, 0, 0, 0, 5, 7, 0, 2, 3},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {7, 5, 3, 2, 0, 4, 0, 0, 0}
-    };
-
-    static int[][] boardGodLike = {
-            {0, 0, 0, 6, 0, 2, 8, 0, 4},
-            {0, 0, 0, 0, 3, 0, 0, 0, 7},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {4, 0, 6, 0, 5, 0, 3, 0, 0},
-            {2, 0, 8, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 9, 1, 0},
-            {1, 0, 0, 0, 0, 0, 2, 0, 0},
-            {0, 7, 0, 9, 0, 0, 0, 5, 0},
-            {0, 0, 2, 4, 0, 0, 0, 0, 8}
-    };
-
     public static void afficherGrille (int[][] tab){
         int value = 0;
         for (int ligne = 0; ligne < tab.length; ligne++){
@@ -96,24 +48,6 @@ public class Main {
         }
         return true;
     }
-    public static boolean Section (int [][]tab , int section){
-    //On test tous les nombres de 1 à 9
-        for (int num = 1; num < 10; num++ ){
-            int conter = 0;
-            //
-            for (int i=0; i<3;i ++){
-                for (int j=0; j<3; j++){
-                    if (num == tab[i][j]){
-                        conter ++;
-                    }
-                    if (conter >1){
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-    }
 
     public static boolean sectionIsTrue (int[][] tab){
         // On test tous les nombres de 1 à 9
@@ -136,11 +70,13 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        afficherGrille(boardEasy);
+
+        //afficherGrille(Boards.boardEasy);
         System.out.println();
-        System.out.println("Les règles sont respectés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
+        System.out.println("Les règles sont respectés a l'horizontale: " + ligneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(boardEasy, 0));
-        System.out.println("les règles sont respectés pour la section: " + Section(boardEasy,0));
+        System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(Boards.boardEasy, 0));
+        System.out.println();
+        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy));
     }
 }
