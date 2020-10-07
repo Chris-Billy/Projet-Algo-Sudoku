@@ -51,13 +51,19 @@ public class Main {
     };
 
     public static void afficherGrille (int [][] tab){
-        int colonne = 0;
+        int value = 0;
         for (int ligne = 0; ligne < tab.length; ligne++){
-            System.out.print(tab[ligne][colonne] + " ");
+            for (int colonne = 0; colonne < tab[ligne].length; colonne++){
+                value = tab[ligne][colonne];
+                System.out.print(value + " ");
+            }
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
         afficherGrille(boardEasy);
+        System.out.println();
+        afficherGrille(boardMedium);
     }
 }
