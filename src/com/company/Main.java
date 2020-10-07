@@ -70,14 +70,31 @@ public class Main {
         return true;
     }
 
+    public static boolean allSectionIsTrue (int [][] tab){
+        // On test toutes les sections par ligne
+        for (int starLigne = 0; starLigne < 7; starLigne = starLigne + 3){
+            // On test toutes les sections par colonne
+            for (int startColonne = 0; startColonne < 7; startColonne = startColonne + 3){
+                if (sectionIsTrue(tab, starLigne, startColonne) == true){
+                    continue;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        return  true;
+    }
+
     public static void main(String[] args) {
 
         //afficherGrille(Boards.boardEasy);
         System.out.println();
-        System.out.println("Les règles sont respectés a l'horizontale: " + ligneIsTrue(Boards.boardEasy, 0));
+        System.out.println("Les règles sont respectées a l'horizontale: " + ligneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(Boards.boardEasy, 0));
+        System.out.println("Les règles sont respectées a la verticale: " + colonneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy, 0, 3));
+        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy, 0, 0));
+        System.out.println("les règles sont respectés pour toutes les sections: " + allSectionIsTrue(Boards.boardEasy));
     }
 }
