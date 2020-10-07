@@ -79,10 +79,11 @@ public class Main {
         }
         return true;
     }
+
     public static boolean colonneIsTrue (int[][] tab,int colonne){
         // On test tous les nombres de 1 à 9
         for (int i = 1; i < 10; i++){
-            // On test tous les indices d'une ligne
+            // On test tous les indices d'une colonne
             int conter = 0;
             for (int ligne = 0; ligne < tab.length; ligne++){
                 if (i == tab[ligne][colonne]){
@@ -95,20 +96,10 @@ public class Main {
         }
         return true;
     }
-    /*public static boolean colonneIsTrue (int[][] tab,int colonne, int nombre){
-        for (int ligne = 0; ligne < tab.length; ligne++){
-            if (nombre == tab[ligne][colonne])
-                return false;
-        }
-        return true;
-    }
- */
 
     public static void main(String[] args) {
         //afficherGrille(boardEasy);
         System.out.println("Les règles sont resperctés: " + ligneIsTrue(boardEasy, 0));
         System.out.println("Les règles sont resperctés: " + colonneIsTrue(boardEasy, 0));
-        //System.out.println(ligneIsTrue(boardEasy, 1));
-        //System.out.println(colonneIsTrue(boardEasy, 0, 5));
     }
 }
