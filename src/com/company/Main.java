@@ -98,8 +98,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        //afficherGrille(boardEasy);
+        afficherGrille(boardEasy);
+        System.out.println();
         System.out.println("Les règles sont respertés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
+        System.out.println();
         System.out.println("Les règles sont respertés a la verticale: " + colonneIsTrue(boardEasy, 0));
     }
 }
