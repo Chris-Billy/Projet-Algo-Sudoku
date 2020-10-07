@@ -96,12 +96,32 @@ public class Main {
         }
         return true;
     }
+    public static boolean Section (int [][]tab , int section){
+    //On test tous les nombres de 1 à 9
+        for (int num = 1; num < 10; num++ ){
+            int conter = 0;
+            //
+            for (int i=0; i<3;i ++){
+                for (int j=0; j<3; j++){
+                    if (num == tab[i][j]){
+                        conter ++;
+                    }
+                    if (conter >1){
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
+
         afficherGrille(boardEasy);
         System.out.println();
-        System.out.println("Les règles sont respertés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
+        System.out.println("Les règles sont respectés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
         System.out.println();
-        System.out.println("Les règles sont respertés a la verticale: " + colonneIsTrue(boardEasy, 0));
+        System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(boardEasy, 0));
+        System.out.println("les règles sont respectés pour la section: " + Section(boardEasy,0));
     }
 }
