@@ -2,12 +2,6 @@ package com.company;
 
 public class Main {
 
-    public static void afficherGrille (int [][] tab){
-    }
-
-    public static void main(String[] args) {
-    }
-
     static int[][] boardEasy = {
             {4, 0, 0, 1, 0, 2, 6, 8, 0},
             {1, 0, 0, 0, 9, 0, 0, 0, 4},
@@ -55,4 +49,15 @@ public class Main {
             {0, 7, 0, 9, 0, 0, 0, 5, 0},
             {0, 0, 2, 4, 0, 0, 0, 0, 8}
     };
+
+    public static void afficherGrille (int [][] tab){
+        int colonne = 0;
+        for (int ligne = 0; ligne < tab.length; ligne++){
+            System.out.print(tab[ligne][colonne] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        afficherGrille(boardEasy);
+    }
 }
