@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     static int[][] boardEasy = {
-            {0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {4, 0, 0, 1, 0, 2, 6, 8, 0},
             {1, 0, 0, 0, 9, 0, 0, 0, 4},
             {0, 3, 8, 0, 6, 4, 0, 1, 0},
             {0, 0, 5, 0, 7, 1, 9, 2, 0},
@@ -65,11 +65,16 @@ public class Main {
 
     public static boolean ligneIsTrue (int[][] tab,int ligne){
         // On test tous les indices d'une ligne
-        for (int colonne = 0; colonne < tab.length; colonne++){
+        for (int i = 1; i < 10; i++){
             // On test tous les nombres de 1 à 9
-            for (int i = 1; i < 10; i++){
-                if (i == tab[ligne][colonne])
+            int conter = 0;
+            for (int colonne = 0; colonne < tab.length; colonne++){
+                if (i == tab[ligne][colonne]){
+                    conter++;
+                }
+                if (conter > 1) {
                     return false;
+                }
             }
         }
         return true;
@@ -85,9 +90,9 @@ public class Main {
  */
 
     public static void main(String[] args) {
-        afficherGrille(boardEasy);
-        System.out.println(ligneIsTrue(boardEasy, 0));
-        System.out.println(ligneIsTrue(boardEasy, 1));
+        //afficherGrille(boardEasy);
+        System.out.println("Les règles sont resperctés: " + ligneIsTrue(boardEasy, 0));
+        //System.out.println(ligneIsTrue(boardEasy, 1));
         //System.out.println(colonneIsTrue(boardEasy, 0, 5));
     }
 }
