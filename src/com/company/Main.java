@@ -99,7 +99,7 @@ public class Main {
 
     public static void main(String[] args) {
         //afficherGrille(boardEasy);
-        System.out.println("Les règles sont resperctés: " + ligneIsTrue(boardEasy, 0));
-        System.out.println("Les règles sont resperctés: " + colonneIsTrue(boardEasy, 0));
+        System.out.println("Les règles sont respertés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
+        System.out.println("Les règles sont respertés a la verticale: " + colonneIsTrue(boardEasy, 0));
     }
 }
