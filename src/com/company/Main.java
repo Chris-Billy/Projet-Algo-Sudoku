@@ -136,19 +136,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-<<<<<<< HEAD
-        //afficherGrille(boardEasy);
-        System.out.println("Les règles sont resperctées pour la ligne : " + ligneIsTrue(boardEasy, 0));
-        System.out.println("Les règles sont resperctées pour la colonne : " + colonneIsTrue(boardEasy, 0));
-        System.out.println("Les règles sont resperctées pour la section :" + sectionIsTrue(boardEasy));
-=======
-
         afficherGrille(boardEasy);
         System.out.println();
         System.out.println("Les règles sont respectés a l'horizontale: " + ligneIsTrue(boardEasy, 0));
         System.out.println();
         System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(boardEasy, 0));
         System.out.println("les règles sont respectés pour la section: " + Section(boardEasy,0));
->>>>>>> 2f554e31c1fc3e323b8afee2548bda3252efa8b2
     }
 }
