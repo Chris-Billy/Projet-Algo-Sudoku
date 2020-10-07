@@ -49,14 +49,15 @@ public class Main {
         return true;
     }
 
-    public static boolean sectionIsTrue (int[][] tab){
+    public static boolean sectionIsTrue (int[][] tab, int startLigne, int startColonne){
+        int nbElem = 3;
         // On test tous les nombres de 1 à 9
         for (int num = 1; num < 10; num++){
             int counter = 0;
             // On test tous les indices d'une ligne
-            for (int i = 0; i < 3; i++){
+            for (int i = startLigne; i < startLigne + nbElem; i++){
                 // On test tous les indices d'une colonne
-                for (int j = 0; j < 3; j++){
+                for (int j = startColonne; j < startColonne + nbElem; j++){
                     if (num == tab[i][j]){
                         counter++;
                     }
@@ -77,6 +78,6 @@ public class Main {
         System.out.println();
         System.out.println("Les règles sont respectés a la verticale: " + colonneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy));
+        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy, 0, 3));
     }
 }
