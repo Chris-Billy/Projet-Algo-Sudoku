@@ -86,15 +86,27 @@ public class Main {
         return  true;
     }
 
+    public static boolean grilleIsTrue (int[][] tab){
+        for (int i = 0; i < 9; i++) {
+            if (ligneIsTrue(tab, i) != true || colonneIsTrue(tab, i) != true || allSectionIsTrue(tab) != true) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
 
         //afficherGrille(Boards.boardEasy);
         System.out.println();
-        System.out.println("Les règles sont respectées a l'horizontale: " + ligneIsTrue(Boards.boardEasy, 0));
+        System.out.println("Les règles sont respectées a l'horizontale : " + ligneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("Les règles sont respectées a la verticale: " + colonneIsTrue(Boards.boardEasy, 0));
+        System.out.println("Les règles sont respectées a la verticale : " + colonneIsTrue(Boards.boardEasy, 0));
         System.out.println();
-        System.out.println("les règles sont respectés pour la section: " + sectionIsTrue(Boards.boardEasy, 0, 0));
-        System.out.println("les règles sont respectés pour toutes les sections: " + allSectionIsTrue(Boards.boardEasy));
+        System.out.println("les règles sont respectés pour la section : " + sectionIsTrue(Boards.boardEasy, 0, 0));
+        System.out.println();
+        System.out.println("les règles sont respectés pour toutes les sections : " + allSectionIsTrue(Boards.boardEasy));
+        System.out.println();
+        System.out.println("La grille complete est valide : " + grilleIsTrue(Boards.boardEasy));
     }
 }
