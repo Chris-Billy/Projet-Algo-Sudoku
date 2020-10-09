@@ -1,6 +1,8 @@
 package com.company;
 
 public class Main {
+    static int essai=0;
+
 
     /**
      * Affiche la grille de Sudoku
@@ -153,6 +155,7 @@ public class Main {
                 for (int num = 1; num < 10; num++){
                     // On place le chiffre dans le tableau
                     tab[a][b] = num;
+                    essai++;
                     // On vérifie que la grille est toujours bonne
                     if (grilleIsTrue(tab)){
                         // Si la grille est complète retourne vrai
@@ -177,5 +180,6 @@ public class Main {
         grilleComplete(Boards.boardGodLike, 0);
         System.out.println("Grille APRES");
         afficherGrille(Boards.boardGodLike);
+        System.out.println(essai);
     }
 }
