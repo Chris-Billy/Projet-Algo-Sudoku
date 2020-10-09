@@ -2,6 +2,10 @@ package com.company;
 
 public class Main {
 
+    /**
+     * Affiche la grille de Sudoku
+     * @param tab un tableau d'entier à plusieurs dimensions
+     */
     public static void afficherGrille (int[][] tab){
         int value = 0;
         for (int ligne = 0; ligne < tab.length; ligne++){
@@ -15,6 +19,12 @@ public class Main {
         }
     }
 
+    /**
+     * Vérifie qu'un chiffre n'est pas présent plusieurs fois dans la ligne
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @param ligne indice de la ligne qui est testé
+     * @return Vrai si la ligne n'a pas de doublons, sinon Faux
+     */
     public static boolean ligneIsTrue (int[][] tab,int ligne){
         // On test tous les nombres de 1 à 9
         for (int i = 1; i < 10; i++){
@@ -32,6 +42,12 @@ public class Main {
         return true;
     }
 
+    /**
+     * Vérifie qu'un chiffre n'est pas présent plusieurs fois dans la colonne
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @param colonne indice de la colonne qui est testé
+     * @return Vrai si la colonne n'a pas de doublons, sinon Faux
+     */
     public static boolean colonneIsTrue (int[][] tab,int colonne){
         // On test tous les nombres de 1 à 9
         for (int i = 1; i < 10; i++){
@@ -49,6 +65,13 @@ public class Main {
         return true;
     }
 
+    /**
+     * Vérifie qu'un chiffre n'est pas présent plusieurs fois dans une section
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @param startLigne indice de départ des lignes
+     * @param startColonne indice de départ des colonnes
+     * @return Vrai si la section n'a pas de doublons, sinon Faux
+     */
     public static boolean sectionIsTrue (int[][] tab, int startLigne, int startColonne){
         int nbElem = 3;
         // On test tous les nombres de 1 à 9
@@ -70,6 +93,11 @@ public class Main {
         return true;
     }
 
+    /**
+     * Vérifie qu'un chiffre n'est pas présent plusieurs fois dans toutes les sections
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @return Vrai si toutes les sections n'ont pas de doublons, sinon Faux
+     */
     public static boolean allSectionIsTrue (int [][] tab){
         // On test toutes les sections par ligne
         for (int starLigne = 0; starLigne < 7; starLigne = starLigne + 3){
@@ -86,6 +114,11 @@ public class Main {
         return  true;
     }
 
+    /**
+     * Vérifie que toute la grille ne comporte pas de doublons
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @return Vrai s'il n'y a aucun doublons dans la grille, sinon Faux
+     */
     public static boolean grilleIsTrue (int[][] tab){
         for (int i = 0; i < 9; i++) {
             if (ligneIsTrue(tab, i) != true || colonneIsTrue(tab, i) != true || allSectionIsTrue(tab) != true) {
@@ -95,6 +128,12 @@ public class Main {
         return true;
     }
 
+    /**
+     * Rempli une grille de Sudoku entièrement
+     * @param tab un tableau d'entier à plusieurs dimensions
+     * @param position indice de la position de départ
+     * @return Vrai si le tableau ne comporte pas d'erreur, sinon Faux
+     */
     public static boolean grilleComplete(int [][] tab, int position){
         // Si le tableau est remplis return vrai
         if (position == 9 * 9){
@@ -138,20 +177,5 @@ public class Main {
         grilleComplete(Boards.boardGodLike, 0);
         System.out.println("Grille APRES");
         afficherGrille(Boards.boardGodLike);
-
-
-        //afficherGrille(Boards.boardEasy);
-        /*
-        System.out.println();
-        System.out.println("Les règles sont respectées a l'horizontale : " + ligneIsTrue(Boards.boardEasy, 0));
-        System.out.println();
-        System.out.println("Les règles sont respectées a la verticale : " + colonneIsTrue(Boards.boardEasy, 0));
-        System.out.println();
-        System.out.println("les règles sont respectés pour la section : " + sectionIsTrue(Boards.boardEasy, 0, 0));
-        System.out.println();
-        System.out.println("les règles sont respectés pour toutes les sections : " + allSectionIsTrue(Boards.boardEasy));
-        System.out.println();
-        System.out.println("La grille complete est valide : " + grilleIsTrue(Boards.boardEasy));
-         */
     }
 }
