@@ -1,8 +1,6 @@
 package com.company;
 
 public class Main {
-    static int essai=0;
-
 
     /**
      * Affiche la grille de Sudoku
@@ -172,6 +170,11 @@ public class Main {
         return true;
     }
 
+    /**
+     * Variable calculant le nombre de combinaisons qui ont été testées pour résoudre la grille
+     */
+    static int essai=0;
+
     public static void main(String[] args) {
 
         System.out.println("Grille AVANT");
@@ -180,6 +183,6 @@ public class Main {
         grilleComplete(Boards.boardGodLike, 0);
         System.out.println("Grille APRES");
         afficherGrille(Boards.boardGodLike);
-        System.out.println(essai);
+        System.out.println("Le nombre de combinaisons testées pour cette grille a été de : " + essai);
     }
 }
