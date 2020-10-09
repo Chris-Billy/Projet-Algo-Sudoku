@@ -176,18 +176,19 @@ public class Main {
     static int essai=0;
 
     public static void main(String[] args) {
+        int[][] grille = chargerFichier.charger();
 
         System.out.println("Grille AVANT");
         System.out.println();
-        afficherGrille(Boards.boardEasy);
+        afficherGrille( grille );
         System.out.println();
         long debut = System.currentTimeMillis();
-        grilleComplete(Boards.boardEasy, 0);
+        grilleComplete( grille, 0);
         long fin = System.currentTimeMillis();
         long temps = (fin - debut);
         System.out.println("Grille APRES");
         System.out.println();
-        afficherGrille(Boards.boardEasy);
+        afficherGrille( grille );
         System.out.println();
         System.out.println("Le nombre de combinaisons testées pour cette grille a été de : " + essai);
         System.out.println("Le temps nécessaire pour résoudre cette grille a été de : " + temps + " Millisecondes");
