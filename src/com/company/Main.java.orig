@@ -178,17 +178,21 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Grille AVANT");
-        System.out.println();
         afficherGrille(Boards.boardEasy);
         System.out.println();
+<<<<<<< HEAD
         long debut = System.currentTimeMillis();
         grilleComplete(Boards.boardEasy, 0);
         long fin = System.currentTimeMillis();
         long temps = (fin - debut);
         System.out.println("Grille APRES");
-        System.out.println();
+        afficherGrille(Boards.boardEasy);
+=======
+        grilleComplete(Boards.boardEasy, 0);
+        System.out.println("Grille APRES");
         afficherGrille(Boards.boardEasy);
         System.out.println();
+>>>>>>> d80e20c641fc0fc1d39438638353bfc5be9930a2
         System.out.println("Le nombre de combinaisons testées pour cette grille a été de : " + essai);
         System.out.println("Le temps nécessaire pour résoudre cette grille a été de : " + temps + " Millisecondes");
     }
