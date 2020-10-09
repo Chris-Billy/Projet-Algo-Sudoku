@@ -95,9 +95,53 @@ public class Main {
         return true;
     }
 
+    public static boolean grilleComplete(int [][] tab, int position){
+        // Si le tableau est remplis return vrai
+        if (position == 9 * 9){
+            return true;
+        }
+        int a = position / 9;
+        int b = position % 9;
+        // S'il y a déjà un numéro on passe à la case suivante
+        if (tab[a][b] != 0){
+            return grilleComplete(tab, position + 1);
+        }
+        // On test toutes les  lignes
+        for (int ligne = a; ligne < 9; ligne = ligne++) {
+            // On test toutes les colonnes
+            for (int colonne = b; colonne < 9; colonne = colonne++) {
+                // On test tous les numéros de 1 à 9
+                for (int num = 1; num < 10; num++){
+                    // On place le chiffre dans le tableau
+                    tab[a][b] = num;
+                    // On vérifie que la grille est toujours bonne
+                    if (grilleIsTrue(tab)){
+                        // Si la grille est complète retourne vrai
+                        if (grilleComplete(tab, position + 1)){
+                            return true;
+                        }
+                    }
+                }
+                // Retour en arrière
+                tab[a][b] = 0;
+                return  false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
 
+        System.out.println("Grille AVANT");
+        afficherGrille(Boards.boardGodLike);
+        System.out.println();
+        grilleComplete(Boards.boardGodLike, 0);
+        System.out.println("Grille APRES");
+        afficherGrille(Boards.boardGodLike);
+
+
         //afficherGrille(Boards.boardEasy);
+        /*
         System.out.println();
         System.out.println("Les règles sont respectées a l'horizontale : " + ligneIsTrue(Boards.boardEasy, 0));
         System.out.println();
@@ -108,5 +152,6 @@ public class Main {
         System.out.println("les règles sont respectés pour toutes les sections : " + allSectionIsTrue(Boards.boardEasy));
         System.out.println();
         System.out.println("La grille complete est valide : " + grilleIsTrue(Boards.boardEasy));
+         */
     }
 }
