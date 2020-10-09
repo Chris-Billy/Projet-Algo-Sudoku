@@ -178,7 +178,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Grille AVANT");
-        afficherGrille(Boards.boardEasy);
+        afficherGrille(Boards.boardGodLike);
         System.out.println();
         long debut = System.currentTimeMillis();
         grilleComplete(Boards.boardEasy, 0);
@@ -187,6 +187,5 @@ public class Main {
         System.out.println("Grille APRES");
         afficherGrille(Boards.boardEasy);
         System.out.println("Le nombre de combinaisons testées pour cette grille a été de : " + essai);
-        System.out.println("Le temps nécessaire pour résoudre cette grille a été de : " + temps + " Millisecondes");
     }
 }
