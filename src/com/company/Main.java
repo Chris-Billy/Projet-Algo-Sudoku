@@ -178,11 +178,12 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Grille AVANT");
-        afficherGrille(Boards.boardGodLike);
+        afficherGrille(Boards.boardEasy);
         System.out.println();
-        grilleComplete(Boards.boardGodLike, 0);
+        grilleComplete(Boards.boardEasy, 0);
         System.out.println("Grille APRES");
-        afficherGrille(Boards.boardGodLike);
+        afficherGrille(Boards.boardEasy);
+        System.out.println();
         System.out.println("Le nombre de combinaisons testées pour cette grille a été de : " + essai);
     }
 }
